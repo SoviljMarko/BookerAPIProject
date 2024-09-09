@@ -1,0 +1,512 @@
+[
+  {
+    "line": 2,
+    "elements": [
+      {
+        "start_timestamp": "2024-09-09T15:47:40.457Z",
+        "line": 4,
+        "name": "Create a new auth Token",
+        "description": "",
+        "id": "validating-booker-apis;create-a-new-auth-token",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 447768000,
+              "status": "passed"
+            },
+            "line": 5,
+            "name": "Providing username and password",
+            "match": {
+              "location": "step_definitions.StepDefinitions.providing_username_and_password()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 1185532000,
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "User calls /auth with POST http request",
+            "match": {
+              "location": "step_definitions.StepDefinitions.user_calls_auth_with_POST_http_request()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 1802000,
+              "status": "passed"
+            },
+            "line": 7,
+            "name": "The API call is success with status code 200",
+            "match": {
+              "arguments": [
+                {
+                  "val": "200",
+                  "offset": 41
+                }
+              ],
+              "location": "step_definitions.StepDefinitions.the_API_call_is_success_with_status_code(int)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 260790000,
+              "status": "passed"
+            },
+            "line": 8,
+            "name": "Response contains Token",
+            "match": {
+              "location": "step_definitions.StepDefinitions.response_contains_Token()"
+            },
+            "keyword": "And "
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2024-09-09T15:47:42.380Z",
+        "line": 10,
+        "name": "Verify if the Booking is Successfully added",
+        "description": "",
+        "id": "validating-booker-apis;verify-if-the-booking-is-successfully-added",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 2134000,
+              "status": "passed"
+            },
+            "line": 11,
+            "name": "Providing all necessary information for new Booking from Json File",
+            "match": {
+              "location": "step_definitions.StepDefinitions.providin_all_necessary_information_for_new_Booking()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 629253000,
+              "status": "passed"
+            },
+            "line": 12,
+            "name": "User calls \"/booking\" with POST http request",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"/booking\"",
+                  "offset": 11
+                }
+              ],
+              "location": "step_definitions.StepDefinitions.user_calls_booking_with_post_http_request(java.lang.String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 77000,
+              "status": "passed"
+            },
+            "line": 13,
+            "name": "The API call is success with status code 200",
+            "match": {
+              "arguments": [
+                {
+                  "val": "200",
+                  "offset": 41
+                }
+              ],
+              "location": "step_definitions.StepDefinitions.the_API_call_is_success_with_status_code(int)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 11007000,
+              "status": "passed"
+            },
+            "line": 14,
+            "name": "Response contains Booking Id",
+            "match": {
+              "location": "step_definitions.StepDefinitions.response_contains_booking_id()"
+            },
+            "keyword": "And "
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2024-09-09T15:47:43.028Z",
+        "line": 25,
+        "name": "Verify if changing Booking information is Successful",
+        "description": "",
+        "id": "validating-booker-apis;verify-if-changing-booking-information-is-successful;;2",
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "duration": 5850000,
+              "status": "passed"
+            },
+            "line": 18,
+            "name": "New \"Patrick\", \"Rothfuss\" and auth Token",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"Patrick\"",
+                  "offset": 4
+                },
+                {
+                  "val": "\"Rothfuss\"",
+                  "offset": 15
+                }
+              ],
+              "location": "step_definitions.StepDefinitions.new_and(java.lang.String,java.lang.String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 638080000,
+              "status": "passed"
+            },
+            "line": 19,
+            "name": "User calls \"/booking/\" and ID with PATCH http request",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"/booking/\"",
+                  "offset": 11
+                }
+              ],
+              "location": "step_definitions.StepDefinitions.user_calls_and_ID_with_PATCH_http_request(java.lang.String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 88000,
+              "status": "passed"
+            },
+            "line": 20,
+            "name": "The API call is success with status code 200",
+            "match": {
+              "arguments": [
+                {
+                  "val": "200",
+                  "offset": 41
+                }
+              ],
+              "location": "step_definitions.StepDefinitions.the_API_call_is_success_with_status_code(int)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 16778000,
+              "status": "passed"
+            },
+            "line": 21,
+            "name": "Response contains changed \"Patrick\" and \"Rothfuss\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"Patrick\"",
+                  "offset": 26
+                },
+                {
+                  "val": "\"Rothfuss\"",
+                  "offset": 40
+                }
+              ],
+              "location": "step_definitions.StepDefinitions.response_contains_changed_and(java.lang.String,java.lang.String)"
+            },
+            "keyword": "And "
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2024-09-09T15:47:43.691Z",
+        "line": 26,
+        "name": "Verify if changing Booking information is Successful",
+        "description": "",
+        "id": "validating-booker-apis;verify-if-changing-booking-information-is-successful;;3",
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "duration": 1558000,
+              "status": "passed"
+            },
+            "line": 18,
+            "name": "New \"John R.R.\", \"Tolkien\" and auth Token",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"John R.R.\"",
+                  "offset": 4
+                },
+                {
+                  "val": "\"Tolkien\"",
+                  "offset": 17
+                }
+              ],
+              "location": "step_definitions.StepDefinitions.new_and(java.lang.String,java.lang.String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 636092000,
+              "status": "passed"
+            },
+            "line": 19,
+            "name": "User calls \"/booking/\" and ID with PATCH http request",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"/booking/\"",
+                  "offset": 11
+                }
+              ],
+              "location": "step_definitions.StepDefinitions.user_calls_and_ID_with_PATCH_http_request(java.lang.String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 68000,
+              "status": "passed"
+            },
+            "line": 20,
+            "name": "The API call is success with status code 200",
+            "match": {
+              "arguments": [
+                {
+                  "val": "200",
+                  "offset": 41
+                }
+              ],
+              "location": "step_definitions.StepDefinitions.the_API_call_is_success_with_status_code(int)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 15821000,
+              "status": "passed"
+            },
+            "line": 21,
+            "name": "Response contains changed \"John R.R.\" and \"Tolkien\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"John R.R.\"",
+                  "offset": 26
+                },
+                {
+                  "val": "\"Tolkien\"",
+                  "offset": 42
+                }
+              ],
+              "location": "step_definitions.StepDefinitions.response_contains_changed_and(java.lang.String,java.lang.String)"
+            },
+            "keyword": "And "
+          }
+        ]
+      }
+    ],
+    "name": "Validating Booker APIs",
+    "description": "",
+    "id": "validating-booker-apis",
+    "keyword": "Feature",
+    "uri": "file:src/test/java/features/addingNewBook.feature",
+    "tags": []
+  },
+  {
+    "line": 2,
+    "elements": [
+      {
+        "start_timestamp": "2024-09-09T15:47:44.348Z",
+        "line": 4,
+        "name": "Gather all Booker IDs from same person",
+        "description": "",
+        "id": "validating-booker-apis;gather-all-booker-ids-from-same-person",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 4557000,
+              "status": "passed"
+            },
+            "line": 5,
+            "name": "Author First Name \"Josh\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"Josh\"",
+                  "offset": 18
+                }
+              ],
+              "location": "step_definitions.StepDefinitions.author_First_Name(java.lang.String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 636239000,
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "User calls \"/booking\" with GET http request",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"/booking\"",
+                  "offset": 11
+                }
+              ],
+              "location": "step_definitions.StepDefinitions.user_calls_with_GET_http_request(java.lang.String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 56000,
+              "status": "passed"
+            },
+            "line": 7,
+            "name": "The API call is success with status code 200",
+            "match": {
+              "arguments": [
+                {
+                  "val": "200",
+                  "offset": 41
+                }
+              ],
+              "location": "step_definitions.StepDefinitions.the_API_call_is_success_with_status_code(int)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 180342000,
+              "status": "passed"
+            },
+            "line": 8,
+            "name": "Count number of Bookings with this name",
+            "match": {
+              "location": "step_definitions.StepDefinitions.count_number_of_Bookings_with_this_name()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 126000,
+              "status": "passed"
+            },
+            "line": 9,
+            "name": "Catch random Bookings ID",
+            "match": {
+              "location": "step_definitions.StepDefinitions.catch_random_bookings_ID()"
+            },
+            "keyword": "And "
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2024-09-09T15:47:45.172Z",
+        "line": 12,
+        "name": "Check if searched ID contains same First Name",
+        "description": "",
+        "id": "validating-booker-apis;check-if-searched-id-contains-same-first-name",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 1436000,
+              "status": "passed"
+            },
+            "line": 13,
+            "name": "Previously caught Booking ID",
+            "match": {
+              "location": "step_definitions.StepDefinitions.previously_caught_Booking_ID()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 622289000,
+              "status": "passed"
+            },
+            "line": 14,
+            "name": "User calls \"/booking/\" and ID with GET http request",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"/booking/\"",
+                  "offset": 11
+                }
+              ],
+              "location": "step_definitions.StepDefinitions.user_calls_and_ID_with_GET_http_request(java.lang.String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 67000,
+              "status": "passed"
+            },
+            "line": 15,
+            "name": "The API call is success with status code 200",
+            "match": {
+              "arguments": [
+                {
+                  "val": "200",
+                  "offset": 41
+                }
+              ],
+              "location": "step_definitions.StepDefinitions.the_API_call_is_success_with_status_code(int)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 14034000,
+              "status": "passed"
+            },
+            "line": 16,
+            "name": "\"firstname\" is equal to \"Josh\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"firstname\"",
+                  "offset": 0
+                },
+                {
+                  "val": "\"Josh\"",
+                  "offset": 24
+                }
+              ],
+              "location": "step_definitions.StepDefinitions.is_equal_to(java.lang.String,java.lang.String)"
+            },
+            "keyword": "And "
+          }
+        ]
+      }
+    ],
+    "name": "Validating Booker APIs",
+    "description": "",
+    "id": "validating-booker-apis",
+    "keyword": "Feature",
+    "uri": "file:src/test/java/features/gettingExistingBookInformation.feature",
+    "tags": []
+  }
+]
